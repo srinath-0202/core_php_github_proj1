@@ -9,7 +9,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 	$sql = "insert into dealers(name,is_active,created_by,created_date) values ('$name',1,1,now())";
 	if($conn->query($sql) === true)
 	{
-		echo"Inserted Successfully";
+		header('Location:http://localhost/core_php_github_proj1/dealer_show.php');
 	} 
 	else
 	{
