@@ -5,8 +5,9 @@ require 'db.php';
 if($_SERVER['REQUEST_METHOD'] == "POST")
 {
 	$name = $_POST['name'];
+	$email = $_POST['email'];
 	
-	$sql = "insert into dealers(name,is_active,created_by,created_date) values ('$name',1,1,now())";
+	$sql = "insert into dealers(name,email,is_active,created_by,created_date) values ('$name','$email',1,1,now())";
 	if($conn->query($sql) === true)
 	{
 		header('Location:http://localhost/core_php_github_proj1/dealer_show.php');
@@ -33,7 +34,10 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 </header>
 <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
 	<label>Name : </label>
-	<input type="text" name="name">
+	<input type="text" name="name" placeholder="Enter Name">
+	<br><br>
+	<label>Email : </label>
+	<input type="text" name="email" placeholder="Enter Email">
 	<br><br>
 	<input type="submit" name="submit">
 </form>
