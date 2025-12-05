@@ -25,6 +25,7 @@ $result = $conn->query($sql);
 		<th>Status</th>
 		<th>Created</th>
 		<th>Edit</th>
+		<th>Delete</th>
 	</tr>
 	<?php $i=1; while($row = $result->fetch_assoc()){ ?>
 		<tr>
@@ -34,6 +35,7 @@ $result = $conn->query($sql);
 			<td><?php if($row['is_active'] == 1){ echo "Active"; } ?></td>
 			<td><?php echo $created_dt = date('Y-m-d', strtotime($row['created_date'])); ?></td>
 			<td><button>Edit</button></td>
+			<td><button>Delete</button></td>
 		</tr>
 	<?php $i++; } ?>
 </table>
