@@ -39,3 +39,14 @@ form
 	margin-left: 10px;
 }
 
+#tb1
+{
+/*	background-color: grey;*/
+	color: blue;
+	border: solid;
+	border-radius: 10px;
+	padding: 10px;
+	text-align: center;
+	width: 600px;
+	height: 200px;
+}
