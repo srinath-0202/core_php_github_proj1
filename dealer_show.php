@@ -34,7 +34,11 @@ $result = $conn->query($sql);
 			<td><?php echo $row['email']; ?></td>
 			<td><?php if($row['is_active'] == 1){ echo "Active"; } ?></td>
 			<td><?php echo $created_dt = date('Y-m-d', strtotime($row['created_date'])); ?></td>
-			<td><button>Edit</button></td>
+			<td>
+				<a href="dealer_edit.php/?id=<?php echo $row['id']; ?>">
+				<button>Edit</button>
+				</a>
+			</td>
 			<td><button>Delete</button></td>
 		</tr>
 	<?php $i++; } ?>
